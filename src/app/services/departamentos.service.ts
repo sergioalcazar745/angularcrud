@@ -53,7 +53,7 @@ export class DepartamentosService{
 
     getEmpleadosByDepartamentoId(id:any): Observable<any>{
 
-        var request = environment.url + "api/departamentos/" + id;
+        var request = environment.urlEmpleados + "api/Empleados/EmpleadosDepartamento/" + id;
         return this._http.get(request);
 
     }

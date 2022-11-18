@@ -28,7 +28,7 @@ const appRoutes: Routes = [
     },
 
     {
-        path: "empleados", component: EmpleadosComponent
+        path: "empleados/:id", component: EmpleadosComponent
     },
 ]
 

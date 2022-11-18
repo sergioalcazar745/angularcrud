@@ -8,8 +8,11 @@
             <th>Departamento</th>
         </thead>
         <tbody>
-            <tr>
-                <td></td>
+            <tr *ngFor="let empleado of empleados">
+                <td>{{empleado.apellido}}</td>
+                <td>{{empleado.oficio}}</td>
+                <td>{{empleado.salario}}</td>
+                <td>{{empleado.departamento}}</td>
             </tr>
         </tbody>
     </table>

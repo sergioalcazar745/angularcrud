@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DepartamentosService } from 'src/app/services/departamentos.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Empleado } from 'src/app/models/empleado';
 
 @Component({
   selector: 'app-empleados',
@@ -14,13 +15,14 @@ export class EmpleadosComponent implements OnInit {
 
   ngOnInit(): void {
     this._activateRoute.params.subscribe((parametros: Params) => {
-      getEmpleados(parametros['id']);
+      this.getEmpleados(parametros['id']);
     })
   }
 
   getEmpleados(id:any){
     this._service.getEmpleadosByDepartamentoId(id).subscribe(response => {
-
+      this.empleados = response
+      console.log(response)
     });
   }
 

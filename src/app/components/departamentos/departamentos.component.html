@@ -21,7 +21,7 @@
                 <td>{{departamento.localidad}}</td>
                 <td><a class="btn btn-primary" [routerLink]="['/detalles-departamento', departamento.numero]">Detalles</a></td>
                 <td><a class="btn btn-danger" (click)="modalEliminar(departamento.numero)">Eliminar</a></td>
-                <td><a class="btn btn-success" (click)="filtrarEmpleados(departamento.numero)">Empleados</a></td>
+                <td><a class="btn btn-success" (click)="filtrarEmpleados(departamento.numero)" [routerLink]="['/empleados', departamento.numero]">Empleados</a></td>
             </tr>   
         </tbody>
     </table>
