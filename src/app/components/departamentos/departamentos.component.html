@@ -1,0 +1,28 @@
+<div class="container">
+    <h1 class="my-5">Departamentos</h1>
+    <div class="d-flex justify-content-center my-5" *ngIf="loading">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <table class="table" *ngIf="!loading">
+        <thead>
+            <th>Numero</th>
+            <th>Nombre</th>
+            <th>Localidad</th>
+            <th>Detalles</th>
+            <th>Eliminar</th>
+            <th>Empleados</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let departamento of departamentos">
+                <td>{{departamento.numero}}</td>
+                <td>{{departamento.nombre}}</td>
+                <td>{{departamento.localidad}}</td>
+                <td><a class="btn btn-primary" [routerLink]="['/detalles-departamento', departamento.numero]">Detalles</a></td>
+                <td><a class="btn btn-danger" (click)="modalEliminar(departamento.numero)">Eliminar</a></td>
+                <td><a class="btn btn-success" (click)="filtrarEmpleados(departamento.numero)">Empleados</a></td>
+            </tr>   
+        </tbody>
+    </table>
+</div>

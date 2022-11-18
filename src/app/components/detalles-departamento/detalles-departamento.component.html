@@ -1,0 +1,19 @@
+<div class="container">
+    <h1 class="my-5" *ngIf = "departamento">Detalle {{departamento.numero}}</h1>
+    <form (ngSubmit)="modificarDepartamento()" #departamentoForm = "ngForm" *ngIf="departamento">
+        <div class="mt-3">
+            <label class="form-label">Número</label>
+            <input class="form-control" type="text" #cajanumero name="cajanumero" value="{{departamento.numero}}"/>
+        </div>
+        <div class="mt-3">
+            <label class="form-label">Nombre</label>
+            <input class="form-control" type="text" #cajanombre name="cajanombre" value="{{departamento.nombre}}"/>
+        </div>
+        <div class="mt-3">
+            <label class="form-label">Localidad</label>
+            <input class="form-control" type="text" #cajalocalidad name="cajalocalidad" value="{{departamento.localidad}}"/>
+        </div>
+        <button class="btn btn-success mt-3">Modificar departamento</button>
+        <a class="btn btn-danger mt-3 ms-3" [routerLink] = "['/departamentos']">Volver</a>
+    </form>
+</div>
